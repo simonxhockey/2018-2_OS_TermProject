@@ -188,8 +188,10 @@ int main(void) {
 			num_rq--;
 		}
 		else if (input == 4) { // kill the scheduler
-			printf("\nscheduler will stop in 3 secs.");
+			printf("\nCFScheduler will stop in 3secs.\n");
+			
 			sleep(3);
+			printf("CFScheduler stopped.\n");
 			break;
 		}
 		else if (input == 5) { // display which processes are on rq and their attr.
