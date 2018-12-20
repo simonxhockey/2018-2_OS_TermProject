@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
@@ -13,8 +11,7 @@ typedef struct node {
 	struct node* next; 
 }Node; 
 
-Node* newNode(int d, int p) 
-{ 
+Node* newNode(int d, int p) { 
 	Node* tmp = (Node*)malloc(sizeof(Node)); 
 	tmp->data = d; 
 	tmp->priority = p; 
@@ -24,22 +21,19 @@ Node* newNode(int d, int p)
 }
 
 /* Return the value at head */
-int peek(Node** head) 
-{ 
+int peek(Node** head) { 
 	return (*head)->data; 
 } 
 
 /* Removes the element by priority */
-void pop(Node** head) 
-{ 
+void pop(Node** head) { 
 	Node* tmp = *head; 
 	(*head) = (*head)->next; 
 	free(tmp); 
 } 
 
 /* Push node order to priority */ 
-void push(Node** head, int d, int p) 
-{ 
+void push(Node** head, int d, int p) { 
 	Node* start = (*head); 
  
 	Node* tmp = newNode(d, p); // create new Node
